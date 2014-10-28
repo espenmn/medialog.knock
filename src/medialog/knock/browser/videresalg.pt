@@ -17,7 +17,7 @@
           		<h1 id="test">test</h1>
  
     <p>Hjemmestyrkene, kr 398: <input id="hjemme" name="hjemme" data-bind='value: hjemme' />
-    <span>Sum: <span data-bind='text: sumHjemme'> </span></span>  </p> 
+    <span>Sum: <span name="sumHjemme" data-bind='text: sumHjemme'> </span></span>  </p> 
 
     <p>Toralv – Slik vart livet mitt, kr 298: <input data-bind='value: toralf' /> 
         <span>Sum: <span data-bind='text: sumToralf'> </span></span></p>  

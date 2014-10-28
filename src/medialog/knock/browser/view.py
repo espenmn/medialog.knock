@@ -29,9 +29,10 @@ class Videresalg(BrowserView):
             mailhost = self.context.MailHost
             form= self.request.form
             hjemmestyrkene=form.get('hjemme')
+            sumHjemme=form.get('sumHjemme')
             mto = 'espen@medialog.no'
             msg="""
-            Hjemmestyrkene: %s     """ %(hjemmestyrkene)
+            Hjemmestyrkene: %s tilsammen kr %s    """ %(hjemmestyrkene, sumHjemme)
 
             mailhost.send(messageText=msg, subject='Bestilling', mto=mto, mfrom='post@medialog.no')
             return "takk for din bestilling"
