@@ -1,0 +1,151 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      lang="en"
+      >
+<body>
+
+    <metal:main fill-slot="main">
+        <tal:main-macro metal:define-macro="main">
+
+
+          <form  class='liveExample' method="post" 
+          		tal:attributes="action request/getURL">
+ 
+    <p>Hjemmestyrkene, kr 398: <input data-bind='value: hjemme' />
+    <span>Sum: <span data-bind='text: sumHjemme'> </span></span>  </p> 
+
+    <p>Toralf – Slik vart livet mitt, kr 298: <input data-bind='value: toralf' /> 
+        <span>Sum: <span data-bind='text: sumToralf'> </span></span></p>  
+
+    <p>Farmor fortalte, kr 278: <input data-bind='value: farmorfortalte' /> 
+    <span>Sum: <span data-bind='text: sumFarmorfortalte'> </span></span> </p> 
+
+    <p>Farmors eventyr, kr 248: <input data-bind='value: farmorseventyr' /> 
+    <span>Sum: <span data-bind='text: sumFarmorseventyr'> </span></span> </p> 
+    
+    <p>Se med kamera, kr 448: <input data-bind='value: semedkamera' /> 
+    <span>Sum: <span data-bind='text: sumSemedkamera'> </span></span> </p> 
+    
+    <p>Hjemmefronten, kr 398: <input data-bind='value: hjemmefronten' /> 
+    <span>Sum: <span data-bind='text: sumHjemmefronten'> </span></span> </p> 
+    
+    <p>Rjukan, kr 298: <input data-bind='value: rjukan' /> 
+    <span>Sum: <span data-bind='text: sumRjukan'> </span></span> </p> 
+    
+    <p>Kåres bok, kr 248: <input data-bind='value: kaaresbok' /> 
+    <span>Sum: <span data-bind='text: sumKaaresbok'> </span></span> </p> 
+    
+    <p>Viul. Samfunn og industri, kr 378: <input data-bind='value: viul' /> 
+    <span>Sum: <span data-bind='text: sumViul'> </span></span> </p> 
+    
+    <p>Beisfjordtragedien, kr 298: <input data-bind='value: beisfjord' /> 
+    <span>Sum: <span data-bind='text: sumBeisfjord'> </span></span> </p> 
+        
+    <h2>Total: <span data-bind='text: sumAlt'> </span></h2>  
+    		
+    		<input type="submit" name="export" value="Send" /> 
+		</form>
+<script>// Here's my data model
+var ViewModel = function(hjemme, toralv, farmorfortalte, farmorseventyr, semedkamera, hjemmefronten, rjukan, kaaresbok, viul, beisfjord) {
+    this.hjemme = ko.observable(1);
+    this.toralf = ko.observable(2); 
+    this.farmorfortalte = ko.observable(3); 
+    this.farmorseventyr = ko.observable(4); 
+    this.semedkamera = ko.observable(5); 
+    this.hjemmefronten = ko.observable(6); 
+    this.rjukan = ko.observable(7); 
+    this.kaaresbok = ko.observable(8); 
+    this.viul = ko.observable(9); 
+    this.beisfjord = ko.observable(10);
+    
+    function getSum(antall, price) {
+        if (antall < 10) {
+            return (antall * price * 0.5);
+        }
+        if (antall < 15) {
+            return (antall * price * 0.45);
+        }  
+        if (antall > 14) {
+            return (antall * price * 0.4);
+        }
+    }
+       
+    this.sumHjemme = ko.computed(function() {
+        // Knockout tracks dependencies automatically. 
+        price = 398;
+        antall = this.hjemme();
+        return getSum(antall, price);
+    }, this);
+    
+    this.sumToralf = ko.computed(function() {
+        price = 298;
+        antall = this.toralf();
+        return getSum(antall, price);
+   }, this);
+    
+    this.sumFarmorfortalte = ko.computed(function() {
+        price = 278;
+        antall = this.farmorfortalte();
+        return getSum(antall, price);
+    }, this);
+
+    this.sumFarmorseventyr = ko.computed(function() {
+        price = 248;
+        antall = this.farmorseventyr();
+        return getSum(antall, price);
+    }, this);
+    
+   this.sumSemedkamera = ko.computed(function() {
+        price = 448;
+        antall = this.semedkamera();
+        return getSum(antall, price);
+    }, this);
+
+    this.sumHjemmefronten = ko.computed(function() {
+        price = 398;
+        antall = this.hjemmefronten() ;
+        return getSum(antall, price);
+    }, this);
+
+    this.sumRjukan = ko.computed(function() {
+        price = 298;
+        antall = this.rjukan();
+        return getSum(antall, price);
+    }, this);
+     
+    this.sumKaaresbok = ko.computed(function() {
+        price = 248;
+        antall = this.kaaresbok();
+        return getSum(antall, price);
+    }, this);
+         
+    this.sumViul = ko.computed(function() {
+        price = 398;
+        antall = this.viul();
+        return getSum(antall, price);
+    }, this);
+             
+    this.sumBeisfjord = ko.computed(function() {
+        price = 298;
+        antall = this.beisfjord();
+        return getSum(antall, price);
+    }, this);
+             
+
+    this.sumAlt = ko.computed(function() {
+        return this.sumHjemme()  + this.sumToralf() +  this.sumFarmorfortalte() + this.sumFarmorseventyr() + this.sumSemedkamera() + this.sumHjemmefronten() + this.sumRjukan() + this.sumKaaresbok() + this.sumViul() + this.sumBeisfjord();
+    }, this);
+};
+ 
+ko.applyBindings(new ViewModel("0", "0")); // This makes Knockout get to work
+</script>
+        </tal:main-macro>
+    </metal:main>
+    
+    
+
+</body>
+</html>

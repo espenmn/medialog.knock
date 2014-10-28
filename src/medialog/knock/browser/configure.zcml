@@ -1,0 +1,12 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+  <browser:page 
+    name="videresalg"
+    for="*"
+    permission="zope2.View"
+    template="videresalg.pt" />
+
+
+</configure>
