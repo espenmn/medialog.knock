@@ -24,10 +24,17 @@ class Videresalg(BrowserView):
         return self.index()
 
     def __call__(self,REQUEST):
-    	if 'send.order' in self.request.form: 
-    		#return "hello world"
-    		context = self.context
-    		return self.request.form['hjemme']
+        if 'send.order' in self.request.form: 
+            context = self.context
+            mailhost = self.context.MailHost
+            form= self.request.form
+            hjemmestyrkene=form.get('hjemme')
+            mto = 'espen@medialog.no'
+            msg="""
+            Hjemmestyrkene: %s     """ %(hjemmestyrkene)
 
-        return self.index()
+            mailhost.send(messageText=msg, subject='Bestilling', mto=mto, mfrom='post@medialog.no')
+            return "takk for din bestilling"
+
+     	return self.index()
  
