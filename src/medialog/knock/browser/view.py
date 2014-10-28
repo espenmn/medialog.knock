@@ -29,7 +29,7 @@ class Videresalg(BrowserView):
             mailhost = self.context.MailHost
             form= self.request.form
             hjemmestyrkene=form.get('hjemme')
-            sumHjemme=form.get('sumHjemme')
+            sumHjemme=form.get('shjemme')
             mto = 'espen@medialog.no'
             msg="""
             Hjemmestyrkene: %s tilsammen kr %s    """ %(hjemmestyrkene, sumHjemme)
