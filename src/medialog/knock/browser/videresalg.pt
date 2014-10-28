@@ -13,6 +13,8 @@
 
           <form  class='liveExample' method="post" 
           		tal:attributes="action request/getURL">
+          		
+          		<h1 id="test">test</h1>
  
     <p>Hjemmestyrkene, kr 398: <input id="hjemme" name="hjemme" data-bind='value: hjemme' />
     <span>Sum: <span data-bind='text: sumHjemme'> </span></span>  </p> 
@@ -44,10 +46,14 @@
     <p>Beisfjordtragedien, kr 298: <input data-bind='value: beisfjord' /> 
     <span>Sum: <span data-bind='text: sumBeisfjord'> </span></span> </p> 
         
-    <h2>Total: <span data-bind='text: sumAlt'> </span></h2>  
+    <h2>Total: <span data-bind='text: suxxmAlt'> </span></h2>  
     		
     		<input type="submit" name="send.order" value="Send" /> 
 		</form>
+		
+<script type="text/javascript"> 
+  document.getElementById("test").setAttribute('data-bind','text: sumAlt');
+</script>
 <script>// Here's my data model
 var ViewModel = function(hjemme, toralv, farmorfortalte, farmorseventyr, semedkamera, hjemmefronten, rjukan, kaaresbok, viul, beisfjord) {
     this.hjemme = ko.observable(1);
@@ -142,6 +148,8 @@ var ViewModel = function(hjemme, toralv, farmorfortalte, farmorseventyr, semedka
  
 ko.applyBindings(new ViewModel("0", "0")); // This makes Knockout get to work
 </script>
+
+
         </tal:main-macro>
     </metal:main>
     
