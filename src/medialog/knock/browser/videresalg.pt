@@ -14,7 +14,7 @@
           <form  class='liveExample' method="post" 
           		tal:attributes="action request/getURL">
  
-    <p>Hjemmestyrkene, kr 398: <input data-bind='value: hjemme' />
+    <p>Hjemmestyrkene, kr 398: <input id="hjemme" name="hjemme" data-bind='value: hjemme' />
     <span>Sum: <span data-bind='text: sumHjemme'> </span></span>  </p> 
 
     <p>Toralv – Slik vart livet mitt, kr 298: <input data-bind='value: toralf' /> 
@@ -46,7 +46,7 @@
         
     <h2>Total: <span data-bind='text: sumAlt'> </span></h2>  
     		
-    		<input type="submit" name="export" value="Send" /> 
+    		<input type="submit" name="send.order" value="Send" /> 
 		</form>
 <script>// Here's my data model
 var ViewModel = function(hjemme, toralv, farmorfortalte, farmorseventyr, semedkamera, hjemmefronten, rjukan, kaaresbok, viul, beisfjord) {

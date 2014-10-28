@@ -6,7 +6,7 @@
     name="videresalg"
     for="*"
     permission="zope2.View"
-    template="videresalg.pt" />
+    class=".view.Videresalg" />
 
 
 </configure>

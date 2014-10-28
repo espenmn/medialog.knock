@@ -23,17 +23,11 @@ class Videresalg(BrowserView):
     def render(self):
         return self.index()
 
-    def __init__(self, context, request):
-        super(Exporter, self).__init__(context, request)
-    
     def __call__(self,REQUEST):
+    	if 'send.order' in self.request.form: 
+    		#return "hello world"
+    		context = self.context
+    		return self.request.form['hjemme']
+
         return self.index()
-
-   
-    def export_images(self, imagesize):
-        '''Returns the file (with the preview images
-        '''
-        return "hello world"
-       
-
-
+ 
