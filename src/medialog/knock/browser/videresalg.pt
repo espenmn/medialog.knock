@@ -18,7 +18,7 @@
           		
  
     <p><input  type="number"  min="0" name="hjemmestyrkene" data-bind='value: hjemmestyrkene' /> Hjemmestyrkene, kr 398
-    <span><b>Sum: <span   data-bind='text: sumHjemmestyrkene'> </span>/b></span>  </p> 
+    <span><b>Sum: <span   data-bind='text: sumHjemmestyrkene'> </span></b></span>  </p> 
 	<input  type="hidden" data-bind='value: sumHjemmestyrkene'  name="sumHjemmestyrkene" />
 
     <p><input  type="number"  min="0" name="toralv" data-bind='value: toralv' />  Toralv – Slik vart livet mitt, kr 298
@@ -26,35 +26,35 @@
 	<input  type="hidden" data-bind='value: sumToralv'  name="sumToralv" />
 	
     <p><input  type="number"  min="0" name="farmorfortalte" data-bind='value: farmorfortalte' />  Farmor fortalte, kr 278
-    <span><b>Sum: <span data-bind='text: sumFarmorfortalte'>  </span></b></span>  > </p> 
+    <span><b>Sum: <span data-bind='text: sumFarmorfortalte'>  </span></b></span>  </p> 
 	<input  type="hidden" data-bind='value: sumFarmorfortalte'  name="sumFarmorfortalte" />
 	
     <p> <input  type="number"  min="0" name="farmorseventyr" data-bind='value: farmorseventyr' />  Farmors eventyr, kr 248
-    <span><b>Sum: <span data-bind='text: sumFarmorseventyr'>  </span></b></span>  > </p> 
+    <span><b>Sum: <span data-bind='text: sumFarmorseventyr'>  </span></b></span>  </p> 
     <input  type="hidden" data-bind='value:  sumFarmorseventyr'  name="sumFarmorseventyr" />
     	
     <p><input  type="number"  min="0" name="semedkamera"  data-bind='value: semedkamera' />  Se med kamera, kr 448
-    <span><b>Sum: <span data-bind='text: sumSemedkamera'>  </span></b></span>  > </p> 
+    <span><b>Sum: <span data-bind='text: sumSemedkamera'>  </span></b></span>  </p> 
     <input  type="hidden" data-bind='value: sumSemedkamera'  name="sumSemedkamera" />
     	
     <p> <input  type="number"  min="0" name="hjemmefronten" data-bind='value: hjemmefronten' /> Hjemmefronten, kr 398
-    <span><b>Sum: <span data-bind='text: sumHjemmefronten'>  </span></b></span>  > </p> 
+    <span><b>Sum: <span data-bind='text: sumHjemmefronten'>  </span></b></span>  </p> 
     <input  type="hidden" data-bind='value: sumHjemmefronten'  name="sumHjemmefronten" />
     	
     <p><input  type="number"  min="0" name="rjukan" data-bind='value: rjukan' /> Rjukan, kr 298
-    <span><b>Sum: <span data-bind='text: sumRjukan'>  </span></b></span>  > </p> 
+    <span><b>Sum: <span data-bind='text: sumRjukan'>  </span></b></span>  </p> 
     <input  type="hidden" data-bind='value: sumRjukan'  name="sumRjukan" />
     	
     <p><input  type="number"  min="0" name="kaaresbok" data-bind='value: kaaresbok' /> Kåres bok, kr 248
-    <span><b>Sum: <span data-bind='text: sumKaaresbok'>  </span></b></span>  > </p> 
+    <span><b>Sum: <span data-bind='text: sumKaaresbok'>  </span></b></span>  </p> 
     <input  type="hidden" data-bind='value: sumKaaresbok'  name="sumKaaresbok" />
     
     <p> <input  type="number"  min="0" name="viul" data-bind='value: viul' />  Viul. Samfunn og industri, kr 378
-    <span><b>Sum: <span data-bind='text: sumViul'>  </span></b></span>  > </p> 
+    <span><b>Sum: <span data-bind='text: sumViul'>  </span></b></span>  </p> 
     <input  type="hidden" data-bind='value: sumViul'  name="sumViul" />
     	
     <p><input  type="number"  min="0" name="beisfjord" data-bind='value: beisfjord' />  Beisfjordtragedien, kr 298
-    <span><b>Sum: <span data-bind='text: sumBeisfjord'>  </span></b></span>  > </p> 
+    <span><b>Sum: <span data-bind='text: sumBeisfjord'>  </span></b></span>  </p> 
     <input  type="hidden" data-bind='value: sumBeisfjord'  name="sumBeisfjord" />
     	    
     <h2>Total: <span data-bind='text: sumAlt'> </span></h2>  
