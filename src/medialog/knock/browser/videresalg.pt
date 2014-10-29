@@ -11,7 +11,7 @@
         <tal:main-macro metal:define-macro="main">
 	
 	<h1>Rabattskjema for videreselgere</h1>
-	<p class="documentDescription">Priser er uten moms.</p>
+	<p class="documentDescription">1-9 av samme tittel = 50% rabatt, 10-14 av samme tittel == 55% rabatt og over 15 av samme tittel = 60% rabatt. Priser er uten moms.</p>
 
     <form  class='liveExample' method="post" 
           		tal:attributes="action request/getURL">
