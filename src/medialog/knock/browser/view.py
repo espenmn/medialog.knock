@@ -28,7 +28,7 @@ class Videresalg(BrowserView):
             context = self.context
             mailhost = self.context.MailHost
             form= self.request.form
-            sumHjemme=form.get('sumHjemmestyrkene')
+            sumHjemmestyrkene=form.get('sumHjemmestyrkene')
             sumToralv= form.get('sumToralv')
             sumFarmorfortalte = form.get('sumFarmorfortalte')
             sumFarmorseventyr = form.get('sumFarmorseventyr') 
