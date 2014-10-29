@@ -28,11 +28,65 @@ class Videresalg(BrowserView):
             context = self.context
             mailhost = self.context.MailHost
             form= self.request.form
-            hjemmestyrkene=form.get('hjemme')
-            sumHjemme=form.get('shjemme')
+            sumHjemme=form.get('sumHjemmestyrkene')
+            sumToralv= form.get('sumToralv')
+            sumFarmorfortalte = form.get('sumFarmorfortalte')
+            sumFarmorseventyr = form.get('sumFarmorseventyr') 
+            sumSemedkamera = form.get('sumSemedkamera') 
+            sumHjemmefronten = form.get('sumHjemmefronten')               
+            sumRjukan = form.get('sumRjukan')          
+            sumKaaresbok = form.get('sumKaaresbok') 
+            sumViul = form.get('sumViul')
+            sumBeisfjord = form.get('sumBeisfjord')
+            sumAlt = form.get('sumAlt')
+            
+            hjemmestyrkene=form.get('hjemmestyrkene')
+            toralv= form.get('toralv')
+            farmorfortalte = form.get('farmorfortalte')
+            farmorseventyr = form.get('farmorseventyr') 
+            semedkamera = form.get('semedkamera') 
+            hjemmefronten = form.get('hjemmefronten')               
+            rjukan = form.get('rjukan')          
+            kaaresbok = form.get('kaaresbok') 
+            viul = form.get('viul')
+            beisfjord = form.get('beisfjord')
+            navn = form.get('navn')
+            epost = form.get('epost')
+            telefon = form.get('telefon')
+            firma  = form.get('firma')
+            adresse = form.get('adresse')
+            postnr = form.get('postnr')
+            poststed = form.get('poststed') 
+ 
+            
             mto = 'espen@medialog.no'
             msg="""
-            Hjemmestyrkene: %s tilsammen kr %s    """ %(hjemmestyrkene, sumHjemme)
+            Hjemmestyrkene: %s tilsammen kr %s    
+            Toralv: %s tilsammen kr %s  
+            Farmorfortalte: %s tilsammen kr %s  
+            Farmorseventyr: %s tilsammen kr %s  
+            Semedkamera: %s tilsammen kr %s  
+            Hjemmefronten:   %s tilsammen kr %s  
+            Rjukan: %s tilsammen kr %s  
+            Kaaresbok: %s tilsammen kr %s  
+            Viul: %s tilsammen kr %s  
+            Beisfjord: %s tilsammen kr %s  
+            Totalt: %s
+            Navn: %s Epost: %s Telefon: %s Firma: %s Adresse: %s Postnr: %s Poststed: %s
+            """  %(hjemmestyrkene, sumHjemmestyrkene,
+            	 toralv, sumToralv,
+            	 farmorfortalte, sumFarmorfortalte,
+            	 farmorseventyr, sumFarmorseventyr,
+            	 semedkamera, sumSemedkamera,
+            	 hjemmefronten, sumHjemmefronten,
+            	 rjukan, sumRjukan,
+            	 kaaresbok, sumKaaresbok,
+            	 viul, sumViul,
+            	 beisfjord, sumBeisfjord,
+            	 sumAlt,
+            	 navn, epost, telefon, firma, adresse, postnr, poststed, 
+            	)
+            
 
             mailhost.send(messageText=msg, subject='Bestilling', mto=mto, mfrom='post@medialog.no')
             return "takk for din bestilling"
