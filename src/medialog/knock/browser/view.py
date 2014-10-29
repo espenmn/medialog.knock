@@ -59,7 +59,7 @@ class Videresalg(BrowserView):
             poststed = form.get('poststed') 
  
             
-            mto = 'espen@medialog.no'
+            mto = 'arnekjeldstadli@gmail.com, espen@medialog.no'
             msg="""
             Hjemmestyrkene: %s tilsammen kr %s    
             Toralv: %s tilsammen kr %s  
