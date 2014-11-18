@@ -86,13 +86,13 @@ var ViewModel = function(hjemmestyrkene, toralv, farmorfortalte, farmorseventyr,
     
     function getSum(antall, price) {
         if (antall < 10) {
-            return (antall * price * 0.5);
+            return (antall * price * 0.5).toFixed(2);;
         }
         if (antall < 15) {
-            return (antall * price * 0.45);
+            return (antall * price * 0.45).toFixed(2);;
         }  
         if (antall > 14) {
-            return (antall * price * 0.4);
+            return (antall * price * 0.4).toFixed(2);;
         }
     }
        
