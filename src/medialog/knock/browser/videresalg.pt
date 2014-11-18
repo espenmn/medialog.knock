@@ -86,13 +86,13 @@ var ViewModel = function(hjemmestyrkene, toralv, farmorfortalte, farmorseventyr,
     
     function getSum(antall, price) {
         if (antall < 10) {
-            return (antall * price * 0.5).toFixed(2);;
+            return (antall * price * 0.5);
         }
         if (antall < 15) {
-            return (antall * price * 0.45).toFixed(2);;
+            return (antall * price * 0.45);
         }  
         if (antall > 14) {
-            return (antall * price * 0.4).toFixed(2);;
+            return (antall * price * 0.4);
         }
     }
        
@@ -154,7 +154,7 @@ var ViewModel = function(hjemmestyrkene, toralv, farmorfortalte, farmorseventyr,
     this.sumBeisfjord = ko.computed(function() {
         price = 298;
         antall = this.beisfjord();
-        return getSum(antall, price);
+        return (getSum(antall, price)).toFixed(2);;
     }, this);
              
 
