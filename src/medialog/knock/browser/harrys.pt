@@ -17,15 +17,15 @@
           		tal:attributes="action request/getURL">
           		
  
-    <p><input  type="number"  min="5" name="harrysrode" data-bind='value: harrysrode' /> Harrys Røde
+    <p><input  type="number"  min="0" name="harrysrode" data-bind='value: harrysrode' /> Harrys Røde
     <span><b>Sum: <span   data-bind='text: sumHarrysrode'> </span></b></span>  </p> 
 	<input  type="hidden" data-bind='value: sumHarrysrode'  name="sumHarrysrode" />
 
-    <p><input  type="number"  min="5" name="harryshvite" data-bind='value: harryshvite' /> Harrys Hvite
+    <p><input  type="number"  min="0" name="harryshvite" data-bind='value: harryshvite' /> Harrys Hvite
     <span><b>Sum: <span   data-bind='text: sumHarryshvite'> </span></b></span>  </p> 
 	<input  type="hidden" data-bind='value: sumHarryshvite'  name="sumHarryshvite" />
 
-    <p><input  type="number"  min="5" name="harrysol" data-bind='value: harrysol' /> Harrys Øl
+    <p><input  type="number"  min="0" name="harrysol" data-bind='value: harrysol' /> Harrys Øl
     <span><b>Sum: <span   data-bind='text: sumHarrysol'> </span></b></span>  </p> 
 	<input  type="hidden" data-bind='value: sumHarrysol'  name="sumHarrysol" /
     	    
@@ -81,7 +81,7 @@ var ViewModel = function(harrysol, harryshvite, harrysrode) {
         
 
     this.sumAlt = ko.computed(function() {
-        return this.sumHarrysol()  + this.sumHarryshvite() +  this.harrysrode();
+        return this.sumHarrysol()  + this.sumHarryshvite() +  this.sumHarrysrode();
     }, this);
 };
  
