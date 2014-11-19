@@ -8,5 +8,10 @@
     permission="zope2.View"
     class=".view.Videresalg" />
 
+  <browser:page 
+    name="harrys"
+    for="*"
+    permission="zope2.View"
+    class=".view.Harrys" />
 
 </configure>

@@ -1,0 +1,98 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="here/main_template/macros/master"
+      lang="en"
+      >
+<body>
+
+    <metal:main fill-slot="main">
+        <tal:main-macro metal:define-macro="main">
+	
+	<h1>Harrys beste, bokpakker</h1>
+	<p class="documentDescription">1-5 av samme tittel = 100 kr pr tittel, 10-19 av samme tittel = kr. 90 <br />og over 20 av samme tittel = kr 80. Priser er uten moms. <br/>For ekstra store bestillinger, kontakt oss.</p>
+
+    <form  class='liveExample' method="post" 
+          		tal:attributes="action request/getURL">
+          		
+ 
+    <p><input  type="number"  min="5" name="harrysrode" data-bind='value: harrysrode' /> Harrys Røde
+    <span><b>Sum: <span   data-bind='text: sumHarrysrode'> </span></b></span>  </p> 
+	<input  type="hidden" data-bind='value: sumHarrysrode'  name="sumHarrysrode" />
+
+    <p><input  type="number"  min="5" name="harryshvite" data-bind='value: harryshvite' /> Harrys Hvite
+    <span><b>Sum: <span   data-bind='text: sumHarryshvite'> </span></b></span>  </p> 
+	<input  type="hidden" data-bind='value: sumHarryshvite'  name="sumHarryshvite" />
+
+    <p><input  type="number"  min="5" name="harrysol" data-bind='value: harrysol' /> Harrys Øl
+    <span><b>Sum: <span   data-bind='text: sumHarrysol'> </span></b></span>  </p> 
+	<input  type="hidden" data-bind='value: sumHarrysol'  name="sumHarrysol" /
+    	    
+    <h2>Total: <span data-bind='text: sumAlt'> </span></h2>  
+    <input  type="hidden" data-bind='value: sumAlt'  name="sumAlt" />
+    <p> </p>		
+    <p>Navn: <input name="navn" size="60" /></p>
+    <p>Firma: <input name="firma"  size="60"  /></p>
+    <p>Epost: <input type="email" name="epost"  size="60"  /></p>
+    <p>Telefon: <input name="telefon"  size="60"  /></p>
+    <p>Adresse: <input name="adresse"  size="60"  /></p>
+    <p>Postnr: <input name="postnr"  size="60" /></p>
+    <p>Poststed: <input name="poststed" size="60"  /></p>
+    			
+    		<input type="submit" name="send.order" value="Send" /> 
+		</form>
+		
+<script>// Here's my data model
+var ViewModel = function(harrysol, harryshvite, harrysrode) {
+    this.harryshvite = ko.observable(0);
+    this.harrysrode = ko.observable(0); 
+    this.harrysol = ko.observable(0); 
+    
+    function getSum(antall, price) {
+        if (antall < 10) {
+            return (antall * 100);
+        }
+        if (antall < 19) {
+            return (antall * 90);
+        }  
+        if (antall > 19) {
+            return (antall * 80);
+        }
+    }
+       
+    this.sumHarryshvite = ko.computed(function() {
+        // Knockout tracks dependencies automatically. 
+        antall = this.harryshvite();
+        return getSum(antall);
+    }, this);
+    
+     this.sumHarrysrode = ko.computed(function() {
+        // Knockout tracks dependencies automatically. 
+        antall = this.harrysrode();
+        return getSum(antall);
+    }, this);
+    
+    this.sumHarrysol = ko.computed(function() {
+        // Knockout tracks dependencies automatically. 
+        antall = this.harrysol();
+        return getSum(antall);
+    }, this);
+        
+
+    this.sumAlt = ko.computed(function() {
+        return this.sumHarrysol()  + this.sumHarryshvite() +  this.harrysrode();
+    }, this);
+};
+ 
+ko.applyBindings(new ViewModel("0", "0")); // This makes Knockout get to work
+</script>
+
+
+        </tal:main-macro>
+    </metal:main>
+    
+    
+
+</body>
+</html>

@@ -93,3 +93,59 @@ class Videresalg(BrowserView):
 
      	return self.index()
  
+ 
+ class Harrys(BrowserView):
+    
+    index = ViewPageTemplateFile("harrys.pt")
+    
+    
+    def render(self):
+        return self.index()
+
+    def __call__(self,REQUEST):
+        if 'send.order' in self.request.form: 
+            context = self.context
+            mailhost = self.context.MailHost
+            form= self.request.form
+            sumHarrysrode=form.get('sumHarrysrode')
+            sumHarryshvite=form.get('sumHarryshvite')
+            sumHarrysol=form.get('sumHarrysol')            
+            
+            sumAlt = form.get('sumAlt')
+            
+            harryshvite=form.get('harryshvite')
+            harrysrode=form.get('harrysrode')
+            harrysol=form.get('harrysol')
+            
+            
+            navn = form.get('navn')
+            epost = form.get('epost')
+            telefon = form.get('telefon')
+            firma  = form.get('firma')
+            adresse = form.get('adresse')
+            postnr = form.get('postnr')
+            poststed = form.get('poststed') 
+ 
+            
+            mto = 'arnekjeldstadli@gmail.com, espen@medialog.no'
+            msg="""
+            Harrys Rode: %s tilsammen kr %s    
+            Harrys Hvite: %s tilsammen kr %s  
+            Harrys Ol: %s tilsammen kr %s  
+            
+            Totalt: %s
+            Navn: %s Epost: %s Telefon: %s Firma: %s Adresse: %s Postnr: %s Poststed: %s
+            """  %(harrysrode, sumHarrysrode,
+            	 harryshvite, sumHarryshvite,
+            	 harrysol, sumHarrysol,
+            	 sumAlt,
+            	 navn, epost, telefon, firma, adresse, postnr, poststed, 
+            	)
+            
+
+            mailhost.send(messageText=msg, subject='Bestilling', mto=mto, mfrom='post@medialog.no')
+            return "takk for din bestilling"
+
+     	return self.index()
+ 
+
