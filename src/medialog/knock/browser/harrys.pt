@@ -11,7 +11,7 @@
         <tal:main-macro metal:define-macro="main">
 	
 	<h1>Harrys beste, bokpakker</h1>
-	<p class="documentDescription">1-5 av samme tittel = 100 kr pr tittel, 10-19 av samme tittel = kr. 90 <br />og over 20 av samme tittel = kr 80. Priser er uten moms. <br/>For ekstra store bestillinger, kontakt oss.</p>
+	<p class="documentDescription">5-9 av samme tittel = 100 kr pr tittel, 10-19 av samme tittel = kr. 90 <br />og over 20 av samme tittel = kr 80. Priser er uten moms. <br/>For ekstra store bestillinger, kontakt oss.</p>
 
     <form  class='liveExample' method="post" 
           		tal:attributes="action request/getURL">
@@ -50,6 +50,10 @@ var ViewModel = function(harrysol, harryshvite, harrysrode) {
     this.harrysol = ko.observable(0); 
     
     function getSum(antall, price) {
+        if (antall < 5) {
+            return (antall * 139);
+        }
+        
         if (antall < 10) {
             return (antall * 100);
         }
