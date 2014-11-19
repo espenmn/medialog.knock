@@ -94,7 +94,7 @@ class Videresalg(BrowserView):
      	return self.index()
  
  
- class Harrys(BrowserView):
+class Harrys(BrowserView):
     
     index = ViewPageTemplateFile("harrys.pt")
     
