@@ -53,7 +53,7 @@ var ViewModel = function(harrysol, harryshvite, harrysrode) {
         if (antall < 10) {
             return (antall * 100);
         }
-        if (antall < 19) {
+        if (antall < 20) {
             return (antall * 90);
         }  
         if (antall > 19) {
