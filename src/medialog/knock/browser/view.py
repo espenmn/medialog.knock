@@ -127,7 +127,7 @@ class Harrys(BrowserView):
             poststed = form.get('poststed') 
  
             
-            mto = 'arnekjeldstadli@gmail.com, espen@medialog.no'
+            mto = 'arnekjeldstadli@gmail.com, espen@medialog.no, harrysbeste@bokstavogbilde.no'
             msg="""
             Harrys Rode: %s tilsammen kr %s    
             Harrys Hvite: %s tilsammen kr %s  
