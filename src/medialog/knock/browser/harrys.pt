@@ -27,7 +27,7 @@
 
     <p><input  type="number"  min="0" name="harrysol" data-bind='value: harrysol' /> Harrys ?~Xl
     <span><b>Sum: <span   data-bind='text: sumHarrysol'> </span></b></span>  </p>
-        <input  type="hidden" data-bind='value: sumHarrysol'  name="sumHarrysol" /
+        <input  type="hidden" data-bind='value: sumHarrysol'  name="sumHarrysol" />
             
     <h2>Total: <span data-bind='text: sumAlt'> </span></h2>
     <input  type="hidden" data-bind='value: sumAlt'  name="sumAlt" />
