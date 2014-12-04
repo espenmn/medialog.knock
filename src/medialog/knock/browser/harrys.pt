@@ -9,29 +9,29 @@
 
     <metal:main fill-slot="main">
         <tal:main-macro metal:define-macro="main">
-	
-	<h1>Harrys beste, bokpakker</h1>
-	<p class="documentDescription">5-9 av samme tittel = 100 kr pr tittel, 10-19 av samme tittel = kr. 90 <br />og over 20 av samme tittel = kr 80. Priser er uten moms. <br/>For ekstra store bestillinger, kontakt oss.</p>
+
+        <h1>Harrys beste, bokpakker</h1>
+        <p class="documentDescription">5-9 av samme tittel = 100 kr pr tittel, 10-19 av samme tittel = kr. 90 <br />og over 20 av samme tittel = kr 80. Priser er uten moms. <br/>For ekstra store bestillinger, kontakt oss.</p>
 
     <form  class='liveExample' method="post" 
-          		tal:attributes="action request/getURL">
-          		
- 
+                        tal:attributes="action request/getURL">
+
+
     <p><input  type="number"  min="0" name="harrysrode" data-bind='value: harrysrode' /> Harrys Røde
-    <span><b>Sum: <span   data-bind='text: sumHarrysrode'> </span></b></span>  </p> 
-	<input  type="hidden" data-bind='value: sumHarrysrode'  name="sumHarrysrode" />
+    <span><b>Sum: <span   data-bind='text: sumHarrysrode'> </span></b></span>  </p>
+        <input  type="hidden" data-bind='value: sumHarrysrode'  name="sumHarrysrode" />
 
     <p><input  type="number"  min="0" name="harryshvite" data-bind='value: harryshvite' /> Harrys Hvite
-    <span><b>Sum: <span   data-bind='text: sumHarryshvite'> </span></b></span>  </p> 
-	<input  type="hidden" data-bind='value: sumHarryshvite'  name="sumHarryshvite" />
+    <span><b>Sum: <span   data-bind='text: sumHarryshvite'> </span></b></span>  </p>
+        <input  type="hidden" data-bind='value: sumHarryshvite'  name="sumHarryshvite" />
 
-    <p><input  type="number"  min="0" name="harrysol" data-bind='value: harrysol' /> Harrys Øl
-    <span><b>Sum: <span   data-bind='text: sumHarrysol'> </span></b></span>  </p> 
-	<input  type="hidden" data-bind='value: sumHarrysol'  name="sumHarrysol" /
-    	    
-    <h2>Total: <span data-bind='text: sumAlt'> </span></h2>  
+    <p><input  type="number"  min="0" name="harrysol" data-bind='value: harrysol' /> Harrys ?~Xl
+    <span><b>Sum: <span   data-bind='text: sumHarrysol'> </span></b></span>  </p>
+        <input  type="hidden" data-bind='value: sumHarrysol'  name="sumHarrysol" /
+            
+    <h2>Total: <span data-bind='text: sumAlt'> </span></h2>
     <input  type="hidden" data-bind='value: sumAlt'  name="sumAlt" />
-    <p> </p>		
+    <p> </p>
     <p>Navn: <input name="navn" size="60" /></p>
     <p>Firma: <input name="firma"  size="60"  /></p>
     <p>Epost: <input type="email" name="epost"  size="60"  /></p>
@@ -39,9 +39,10 @@
     <p>Adresse: <input name="adresse"  size="60"  /></p>
     <p>Postnr: <input name="postnr"  size="60" /></p>
     <p>Poststed: <input name="poststed" size="60"  /></p>
-    			
-    		<input type="submit" name="send.order" value="Send" /> 
-		</form>
+
+                <input type="submit" name="send.order" value="Send" />
+                </form>
+
 		
 <script>// Here's my data model
 var ViewModel = function(harrysol, harryshvite, harrysrode) {
