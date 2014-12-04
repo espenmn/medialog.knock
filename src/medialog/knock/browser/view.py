@@ -149,3 +149,12 @@ class Harrys(BrowserView):
      	return self.index()
  
 
+class Forhandler(Harrys):
+    
+    index = ViewPageTemplateFile("harrys_forhandler.pt")
+    
+    
+    def render(self):
+        return self.index()
+
+   

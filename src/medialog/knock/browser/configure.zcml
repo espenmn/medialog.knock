@@ -14,4 +14,10 @@
     permission="zope2.View"
     class=".view.Harrys" />
 
+  <browser:page 
+    name="forhandler"
+    for="*"
+    permission="zope2.View"
+    class=".view.Forhandler" />
+
 </configure>
