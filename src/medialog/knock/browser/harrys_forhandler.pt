@@ -53,17 +53,21 @@ var ViewModel = function(harrysol, harryshvite, harrysrode) {
     
     function getSum(antall, price) {
         if (antall < 5) {
-            return (antall * 139);
+            return (antall * 119);
         }
         
         if (antall < 10) {
-            return (antall * 99);
+            return (antall * 74);
         }
+        
+        if (antall < 15) {
+            return (antall * 69);
+        }  
         if (antall < 20) {
-            return (antall * 89);
+            return (antall * 64);
         }  
         if (antall > 19) {
-            return (antall * 84);
+            return (antall * 59);
         }
     }
        
