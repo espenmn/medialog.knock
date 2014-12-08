@@ -11,7 +11,7 @@
         <tal:main-macro metal:define-macro="main">
 	
 	<h1>Harrys beste, forhandlerpriser</h1>
-	<p class="documentDescription">5 av samme tittel = 99 kr pr tittel, 10 eller 15 = kr. 89, 20 av samme tittel = kr 84. 
+	<p class="documentDescription">5 av samme tittel = 74 kr pr tittel, 10 = kr. 69, 15 = kr. 64, 15 = 20 av samme tittel = kr 59. 
 	Priser er uten moms. For bestillinger over 25 ex kontakt
 <a href="arne@bokstavogbilde.no">arne@bokstavogbilde.no</a>, tlf +47 41317722 for pris.</p>
 
